@@ -1,0 +1,119 @@
+body {
+
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    margin: 0;
+}
+
+#login, #carregando, #logado {
+
+    text-align: center;
+}
+
+header {
+    
+    text-align: right;
+    background-color: rgb(92, 155, 250);
+}
+
+#imgUsuario {
+
+    border-radius: 100%;
+    width: 60px;
+    margin-top: 5px;
+}
+
+input {
+
+    margin-bottom: 5px;
+    height: 20px;
+    width: 200px;
+}
+
+button {
+
+    margin-bottom: 7px;
+    border: none;
+    color: white;
+    background-color: rgb(6, 98, 141);
+    font-family: 'Trebuchet MS';
+    font-size: medium; 
+    border-radius: 5px;
+}
+
+.btnDeletar {
+
+    background-color: red;
+}
+
+button:hover {
+
+    cursor: pointer;
+}
+
+#entrarGoogle {
+
+    border: rgb(145, 145, 145) solid 1px;
+    background-color: white;
+    color: rgb(70, 70, 70);
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+}
+
+.hidden {
+
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    text-align: center;
+}
+
+li:hover {
+
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+table {
+
+    width: fit-content;
+    margin: 0 auto;
+}
+
+td {
+
+    padding: 30px;
+    vertical-align: top;
+    text-align: right;
+}
+
+#signOut, #botaoDeletar {
+
+    height: 60px;
+    vertical-align: top;
+    margin-top: 5px;
+    width: 110px;
+}
+
+span {
+
+    margin-right: 5px;
+}
+
+hr {
+
+    border: rgb(6, 98, 141) 1px solid;
+}
+
+h3 {
+
+    text-align: center;
+}

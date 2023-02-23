@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Trabalho BD</title>
+        <meta charset="UTF-8">
+
+    </head>
+
+    <body>
+
+        <div id="carregando">
+
+            <img src="img/carregando.gif" alt="carregando" class="hidden" id="carregando">
+
+        </div>
+
+        <div id="login">
+
+            <h3 id="frmLoginTitulo">Entre com uma conta existente</h3>
+
+            <form id="frmLogin">
+
+                <input type="email" placeholder="E-mail" id="email"><br>
+                <input type="password" placeholder="Senha" id="senha"><br>
+                <button type="submit" id="frmLoginSubmit">Entrar</button>
+
+            </form>
+
+            <p id="cadastrar">
+                <label>Não possui cadastro?</label>
+                <button type="button" id="btnCadastrar" onclick="realizarCadastro()">Crie uma conta</button><br>
+            </p>
+            <p id="acessar" class="hidden">
+                <label>Já possui uma conta?</label>
+                <button type="button" id="btnAcessar" onclick="realizarAcesso()">Acesse sua conta</button><br>
+            </p>
+            <button type="button" id="entrarGoogle" onclick="loginGoogle()"> <img src="img/logoGoogle.png" width="50px" onclick="loginGoogle()"> Entrar com Google</button>
+
+        </div>
+
+        <div id="logado">
+
+            <header>
+                <button class='btnDeletar'  id="botaoDeletar" onclick="excluirUsuario()">Excluir conta</button>
+                <button type="button" id="signOut" onclick="signOut()">Sair</button>
+                <img id="imgUsuario">
+            </header>
+            <h3 id="UsuarioLogadoTitulo">Usuário autenticado: </h3>
+            <p id="verificaEmail"></p>
+            <div id="EnviaVerificaEmail">
+                <button onclick="verificaEmail()">Verificar email</button>
+            </div>
+
+            <table>
+
+                <tr>
+                    <td>
+                        <h3 id="TituloFormCliente">Adicionar novo cliente</h3>
+
+                        <form id="frmCliente">
+            
+                            <label>Nome:</label>
+                            <input id="cli_nome" type="text" required><br> 
+            
+                            <label>Endereço:</label>
+                            <input id="cli_endereco" type="text" required><br> 
+            
+                            <label>CPF:</label>
+                            <input id="cli_cpf" type="number" required><br>
+                            
+                            <label>Telefone:</label>
+                            <input id="cli_fone" type="tel"><br> 
+                            
+                            <div id="frmClienteBtnGravar">
+                                <button type="submit">Salvar</button>
+                            </div>
+                            
+                            <div id="frmClienteBtnAlterar" class="hidden">
+                                <button type="submit">Confirmar alterações</button>
+                                <button type="button" onclick="cancelaUpdateCli()">Cancelar</button>
+                            </div>
+                        </form>
+                  
+                            <hr>
+
+                        <h3>Clientes cadastrados</h3>
+                        <div id="listaClientes">
+                            <div class="center">
+                                <label for="filtro">Buscar: </label>
+                                <input type="text" placeholder='Buscar' id="filtroCliente">
+                                </div>
+                            <h3 id="contaCliente">Total de clientes</h3>
+                            <ul id="ulListaClientes"></ul>
+                        </div>
+                    </td>
+                    <td>
+                        <h3 id="TituloFormProduto">Adicionar novo produto</h3>
+
+                        <form id="frmProduto">
+            
+                            <label>Nome:</label>
+                            <input id="pro_nome" type="text"><br>
+                            
+                            <label>Quantidade:</label>
+                            <input id="pro_qtd" type="number"><br>
+            
+                            <label>Valor:</label>
+                            <input id="pro_valor" type="number" step="0.01"><br>
+            
+                            <label>Fornecedor:</label>
+                            <input id="pro_fornecedor" type="text"><br>
+            
+                            <div id="frmProdutoBtnGravar">
+                                <button type="submit">Salvar</button>
+                            </div>
+                            
+                            <div id="frmProdutoBtnAlterar" class="hidden">
+                                <button type="submit">Confirmar alterações</button>
+                                <button type="button" onclick="cancelaUpdate()">Cancelar</button>
+                            </div>
+                        </form>
+
+                        <hr>
+            
+                        <h3>Produtos cadastrados</h3>
+                        <div id="listaProdutos">
+                            <div class="center">
+                                <label for="filtro">Buscar: </label>
+                                <input type="text" placeholder='Buscar' id="filtroProduto">
+                                </div>
+                            <h3 id="contaProduto">Total de produtos</h3>
+                            <ul id="ulListaProdutos"></ul>
+                        </div>
+            
+                    </div>
+                    </td>
+                </tr>
+            
+            </table>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+        <!-- Autenticação -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+        
+        <!-- Javascript -->
+        <script src="js/firebase.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/autentica.js"></script>
+        <script src="js/cliente.js"></script>
+        <script src="js/produto.js"></script>
+
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    </body>
+
+</html>
